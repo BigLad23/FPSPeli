@@ -18,18 +18,19 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // This checks if the player is standing on ground or how far the player is from ground
 
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-
+        // Sprinting
         if (Input.GetKey("left shift") && isGrounded)
         {
-            speed = 20f;
+            speed = 20f; // Increase speed when you begin sprinting
+            // Debug.Log("sprinting");
         }
-        else
+        else // Reduce speed when you stop sprinting
         {
             speed = 12f;
         }
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded) // checks if the player is on ground before allowing to jump
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }

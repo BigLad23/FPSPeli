@@ -25,7 +25,7 @@ public class Gun : MonoBehaviour
 
             Enemy enemy = hit.transform.GetComponent<Enemy>();
 
-            if (enemy != null)
+            if (enemy != null) // checks if you hit a enemy
             {
                 enemy.TakeDamage(damage);
             }

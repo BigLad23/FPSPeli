@@ -13,7 +13,7 @@ public class MouseRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; // Locks your cursor to the game
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class MouseRotation : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+        playerBody.Rotate(Vector3.up * mouseX); // rotates the player based on the player's cursors position
     }
 }
 
