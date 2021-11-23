@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000014235648076}
   - component: {fileID: 23000011633072388}
   - component: {fileID: 64000013489018322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UNIConcrete_wall_v1_S_L_1f1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 33000012054921248}
   - component: {fileID: 23000013249320180}
   - component: {fileID: 64000013171875664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UNIConcrete_wall_v1_S_L_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000013750386712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UNIConcrete_wall_v1_S_L_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 33000011320328796}
   - component: {fileID: 23000010520844376}
   - component: {fileID: 65000011452480604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UNIConcrete_wall_v1_S_L_1f2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
