@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000010072517976}
   - component: {fileID: 23000010978309592}
   - component: {fileID: 64000011184834540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Road_set_v1_road_up_2m_HD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012314437004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Road_set_v1_road_up_2m_HD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 33000011170885006}
   - component: {fileID: 23000013324693350}
   - component: {fileID: 64000013256377202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Road_set_v1_road_up_2m_HD_f
   m_TagString: Untagged
   m_Icon: {fileID: 0}
