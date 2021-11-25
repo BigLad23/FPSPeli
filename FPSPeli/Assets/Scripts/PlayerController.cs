@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 12f;
+    public float speed;
     public float gravity = -9.18f;
     public float jumpHeight = 3f;
 
@@ -27,12 +27,12 @@ public class PlayerController : MonoBehaviour
         // Sprinting
         if (Input.GetKey("left shift") && isGrounded)
         {
-            speed = 20f; // Increase speed when you begin sprinting
+            speed = 11f; // Increase speed when you begin sprinting
             // Debug.Log("sprinting");
         }
         else // Reduce speed when you stop sprinting
         {
-            speed = 12f;
+            speed = 6f;
         }
 
         float x = Input.GetAxis("Horizontal");
