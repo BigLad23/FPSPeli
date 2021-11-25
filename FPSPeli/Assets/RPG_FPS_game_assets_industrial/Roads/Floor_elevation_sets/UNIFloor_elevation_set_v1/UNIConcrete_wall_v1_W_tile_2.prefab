@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000012268796786}
   - component: {fileID: 23000010209008156}
   - component: {fileID: 64000010375427934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UNIConcrete_wall_v1_W_tile_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
