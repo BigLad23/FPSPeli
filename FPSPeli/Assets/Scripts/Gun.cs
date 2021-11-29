@@ -6,6 +6,8 @@ public class Gun : MonoBehaviour
     
     public float damage = 100f;
     public float range = 100f;
+    public float fireRate = 15f;
+    public float impactForce = 30f;
     public int maxAmmo = 30;
     private int currentAmmo;
     public float reloadTime = 1f;
@@ -14,6 +16,8 @@ public class Gun : MonoBehaviour
     public ParticleSystem MuzzleFlash;
     public Camera playerCamera;
     public Animator animator;
+    public GameObject impactEffect;
+    private float nextShot = 0f;
 
 
     void Start()
@@ -37,8 +41,9 @@ public class Gun : MonoBehaviour
             StartCoroutine(Reload());
             return;
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextShot)
         {
+            nextShot = Time.time + 1f/fireRate;
             Shoot();
         }
     }
@@ -58,6 +63,12 @@ public class Gun : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
+            if (hit.rigidbody != null) 
+            {
+                hit.rigidbody.AddForce(-hit.normal * impactForce);
+            }
+            GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(impact, 2f);
         }
     }
     IEnumerator Reload()
@@ -69,6 +80,7 @@ public class Gun : MonoBehaviour
         currentAmmo = maxAmmo; // Sets the current ammo to max ammo
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(reloadTime - .25f);
+        Debug.Log("Reloading Done!");
         isReloading = false;
     }
 }

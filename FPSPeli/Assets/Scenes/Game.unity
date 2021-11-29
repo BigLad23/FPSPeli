@@ -190,7 +190,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 528
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1148,6 +1148,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuzzleFlash01
       objectReference: {fileID: 0}
+    - target: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992675705445476, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1604,7 +1612,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 963194227}
-  m_PlaneDistance: 0.5
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -4515,11 +4523,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
+  fireRate: 15
+  impactForce: 30
   maxAmmo: 30
   reloadTime: 1
   MuzzleFlash: {fileID: 1979120989}
   playerCamera: {fileID: 963194227}
   animator: {fileID: 1611751733}
+  impactEffect: {fileID: 4831463939350186944, guid: f00353c80a95ac841b06cc907bdda52d,
+    type: 3}
 --- !u!95 &1611751733
 Animator:
   serializedVersion: 3
@@ -5846,7 +5858,7 @@ PrefabInstance:
     - target: {fileID: 8440607807453654690, guid: 61795981bfc35e3439241f55b5a806a1,
         type: 3}
       propertyPath: reflectionMask.m_Bits
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8440607807453654702, guid: 61795981bfc35e3439241f55b5a806a1,
         type: 3}
@@ -6558,7 +6570,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967279
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6577,8 +6589,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141747097}
-  m_LocalRotation: {x: 0.08690209, y: -0.68537676, z: 0.08320008, w: 0.7181814}
-  m_LocalPosition: {x: -0.05698967, y: -10.887559, z: -0.7320039}
+  m_LocalRotation: {x: -0.2194525, y: 0.16033328, z: 0.036825825, w: 0.96165365}
+  m_LocalPosition: {x: -1.6242619, y: -14.531653, z: -4.260174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
