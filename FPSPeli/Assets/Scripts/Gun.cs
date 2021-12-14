@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Gun : MonoBehaviour
     public Animator animator;
     public GameObject impactEffect;
     private float nextShot = 0f;
+    public Text ammoDisplay;
 
 
     void Start()
@@ -35,9 +37,9 @@ public class Gun : MonoBehaviour
     {
         if (isReloading)
             return;
+        ammoDisplay.text = currentAmmo.ToString() + " / " + maxAmmo.ToString();
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo) // If the player presses R reload begins
         {
-            Debug.Log("test");
             StartCoroutine(Reload());
             return;
         }
@@ -45,6 +47,11 @@ public class Gun : MonoBehaviour
         {
             nextShot = Time.time + 1f/fireRate;
             Shoot();
+        }
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
         }
     }
     void Shoot()
@@ -55,7 +62,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+           // Debug.Log(hit.transform.name);
 
             Enemy enemy = hit.transform.GetComponent<Enemy>();
 
