@@ -41,6 +41,7 @@ public class Gun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo) // If the player presses R reload begins
         {
             StartCoroutine(Reload());
+            ammoDisplay.text = "Reloading...";
             return;
         }
         if (Input.GetButtonDown("Fire1") && Time.time >= nextShot)
@@ -51,13 +52,14 @@ public class Gun : MonoBehaviour
         if (currentAmmo <= 0)
         {
             StartCoroutine(Reload());
+            ammoDisplay.text = "Reloading...";
             return;
         }
     }
     void Shoot()
     {
-        Debug.Log(currentAmmo);
         currentAmmo = currentAmmo - 1;
+        Debug.Log(currentAmmo);
         MuzzleFlash.Play(); // plays the muzzle flash animation when you fire
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
