@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
+    private float canJump = 0f;
     Vector3 velocity;
     bool isGrounded;
     void Update()
@@ -42,9 +42,11 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded) // checks if the player is on ground before allowing to jump
+        if (Input.GetButtonDown("Jump") && isGrounded && Time.time > canJump) // checks if the player is on ground before allowing to jump
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            canJump = Time.time + 1f;
+
         }
 
         velocity.y += gravity * Time.deltaTime;
