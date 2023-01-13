@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Gun : MonoBehaviour
 {
     
-    public float damage = 100f;
+    public float damage = 10f;
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 30f;
@@ -44,7 +44,7 @@ public class Gun : MonoBehaviour
             ammoDisplay.text = "Reloading...";
             return;
         }
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextShot)
+        if (Input.GetButton("Fire1") && Time.time >= nextShot)
         {
             nextShot = Time.time + 1f/fireRate;
             Shoot();
@@ -64,20 +64,20 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
-           // Debug.Log(hit.transform.name);
+            Debug.Log(hit.transform.name);
 
-            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            EnemyMovement enemy = hit.transform.GetComponent<EnemyMovement>();
 
             if (enemy != null) // checks if you hit a enemy
             {
                 enemy.TakeDamage(damage);
             }
-            if (hit.rigidbody != null) 
+            if (hit.rigidbody != null)
             {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
+                hit.rigidbody.AddForce(-hit.normal * 100f);
             }
-            GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impact, 2f);
+           GameObject Impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+           Destroy(Impact, 2f);
         }
     }
     IEnumerator Reload()
