@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 8830
+  controlID: 145
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -178,7 +178,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: Default
+  m_LastLoadedLayoutName: 
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 8831
+  controlID: 81
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 8832
+  controlID: 82
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -463,22 +463,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Effects/Prefabs
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Effects/Prefabs
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lauri.koro\Documents\FPSPeli\FPSPeli
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 26}
-    m_SelectedIDs: 36a40400
-    m_LastClickedID: 304182
-    m_ExpandedIDs: 0000000088ca000096ca000012eb0000cc52040000ca9a3bffffff7f
+    m_SelectedIDs: 08690000
+    m_LastClickedID: 26888
+    m_ExpandedIDs: 00000000b4680000086900001c69000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,7 +506,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000088ca000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000b4680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -635,24 +635,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 514}
-      m_SelectedIDs: 247dfeff
-      m_LastClickedID: -99036
-      m_ExpandedIDs: e030fdff9e31fdff7478feffb678feff8c7bfeffde7cfeff247efeff7a7efeffee7efeff5486feff1a8afeff1c8afeffde8bfeffe638ffff0ea0ffff52a6ffff42fbffff44cb000086cb000050cc000078cc000002ca020046ca020086ca020018cb020042cb0200
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 42f5ffff98f5ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: HitEffect(Clone)
-        m_OriginalName: HitEffect(Clone)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -234090
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -921,9 +921,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.54719543, y: -6.847501, z: 18.97953}
+    m_Target: {x: 7.415375, y: 0.030055033, z: 14.9906435}
     speed: 2
-    m_Value: {x: 0.54719543, y: -6.847501, z: 18.97953}
+    m_Value: {x: 7.415375, y: 0.030055033, z: 14.9906435}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -970,20 +970,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.4212756, y: 0.44105175, z: -0.24670203, w: -0.7531335}
+    m_Target: {x: -0.0035038658, y: 0.6274785, z: 0.002824492, w: 0.77862847}
     speed: 2
-    m_Value: {x: -0.42086658, y: 0.4391423, z: -0.24476978, w: -0.7550583}
+    m_Value: {x: -0.0034996048, y: 0.628642, z: 0.0028297282, w: 0.7776818}
   m_Size:
-    m_Target: 10.45
+    m_Target: 1.2571418
     speed: 2
-    m_Value: 10.45
+    m_Value: 1.2571526
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.22088997
-    m_SpeedNormalized: 0.109999985
+    m_Speed: 0.001
+    m_SpeedNormalized: 0
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
