@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        GameController.instance.EnemyKilled();
         Destroy(gameObject);
     }
 }

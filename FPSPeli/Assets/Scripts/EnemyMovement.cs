@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -103,6 +104,10 @@ public class EnemyMovement : MonoBehaviour
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
 
             alreadyAttacked = true;
+            if(Time.time >= 2f)
+            {
+                DestroyImmediate(bullet, true);
+            }
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }

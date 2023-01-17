@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private float canJump = 0f;
     Vector3 velocity;
     bool isGrounded;
+    Animator animator;
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // This checks if the player is standing on ground or how far the player is from ground
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
             velocity.y = -2f;
         }
         // Sprinting
-        if (Input.GetKey("left shift") && isGrounded)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 11f; // Increase speed when you begin sprinting
             // Debug.Log("sprinting");
@@ -38,15 +39,24 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            animator.SetBool("isMovingForward", true);
+        }
+        if (Input.GetButtonUp("Horizontal"))
+        {
+            animator.SetBool("isMovingForward", false);
+        } 
+
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded && Time.time > canJump) // checks if the player is on ground before allowing to jump
+        if (Input.GetButton("Jump") && isGrounded && Time.time > canJump) // checks if the player is on ground before allowing to jump
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+           // animator.SetBool("IsJumping", true);
             canJump = Time.time + 1f;
-
         }
 
         velocity.y += gravity * Time.deltaTime;
