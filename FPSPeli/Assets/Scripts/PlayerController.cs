@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         // Sprinting
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 11f; // Increase speed when you begin sprinting
+            speed = 20f; // Increase speed when you begin sprinting
             // Debug.Log("sprinting");
         }
         else // Reduce speed when you stop sprinting
