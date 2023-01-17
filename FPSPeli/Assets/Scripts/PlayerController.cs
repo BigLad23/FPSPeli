@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // This checks if the player is standing on ground or how far the player is from ground
@@ -55,8 +60,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump") && isGrounded && Time.time > canJump) // checks if the player is on ground before allowing to jump
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-           // animator.SetBool("IsJumping", true);
+            animator.SetBool("IsJumping", true);
+            Debug.Log("Jumping");
             canJump = Time.time + 1f;
+        }
+        if (Input.GetButtonUp("Jump") && isGrounded)
+        {
+            animator.SetBool("IsJumping", false);
+            Debug.Log("Not Jumping");
         }
 
         velocity.y += gravity * Time.deltaTime;
