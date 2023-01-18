@@ -59,12 +59,12 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         currentAmmo = currentAmmo - 1;
-        Debug.Log(currentAmmo);
+      //  Debug.Log(currentAmmo);
         MuzzleFlash.Play(); // plays the muzzle flash animation when you fire
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+           // Debug.Log(hit.transform.name);
 
             EnemyMovement enemy = hit.transform.GetComponent<EnemyMovement>();
 

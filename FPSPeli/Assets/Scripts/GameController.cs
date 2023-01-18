@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -23,5 +24,10 @@ public class GameController : MonoBehaviour
     {
         KillCount++;
         KillCountText.text = "Kills: " + KillCount;
+        if (KillCount == 10)
+        {
+            Debug.Log("You win!");
+            SceneManager.LoadScene("EndMenu");
+        }
     }
 }

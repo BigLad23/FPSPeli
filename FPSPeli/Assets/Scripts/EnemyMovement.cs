@@ -122,6 +122,7 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log("Enemy health is " + health);
         if (health <= 0f)
         {
+            GameController.instance.EnemyKilled();
             Die();
         }
     }
