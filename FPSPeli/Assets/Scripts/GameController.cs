@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     public void EnemyKilled() 
     {
         KillCount++;
-        KillCountText.text = "Kills: " + KillCount;
+        KillCountText.text = "Kills: " + KillCount + " / 10";
         if (KillCount == 10)
         {
             Debug.Log("You win!");
