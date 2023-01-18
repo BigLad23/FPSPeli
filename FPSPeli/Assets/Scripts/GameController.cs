@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
         if (KillCount == 10)
         {
             Debug.Log("You win!");
+            Timer.instance.EndTimer();
             SceneManager.LoadScene("EndMenu");
         }
     }
