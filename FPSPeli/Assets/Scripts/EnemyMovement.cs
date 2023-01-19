@@ -22,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttacked;
     public GameObject bullet;
+    public Transform attackPoint;
 
     //States
     public float sightRange, attackRange;
@@ -99,15 +100,10 @@ public class EnemyMovement : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            Rigidbody rb = Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-
+            GameObject enemyBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
+            enemyBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 32f, ForceMode.Impulse);
             alreadyAttacked = true;
-            if(Time.time >= 2f)
-            {
-                DestroyImmediate(bullet, true);
-            }
+            Destroy(enemyBullet, 3f);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
@@ -119,7 +115,7 @@ public class EnemyMovement : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        Debug.Log("Enemy health is " + health);
+        // Debug.Log("Enemy health is " + health);
         if (health <= 0f)
         {
             GameController.instance.EnemyKilled();

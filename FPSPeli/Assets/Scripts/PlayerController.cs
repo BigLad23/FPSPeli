@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float gravity = -9.18f;
     public float jumpHeight = 3f;
+    public float health = 100f;
+    private int currentHealth;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -17,6 +21,7 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     Animator animator;
+    public Text healthDisplay;
 
     void Start()
     {
@@ -61,17 +66,32 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             animator.SetBool("IsJumping", true);
-            Debug.Log("Jumping");
+            // Debug.Log("Jumping");
             canJump = Time.time + 1f;
         }
         if (Input.GetButtonUp("Jump") && isGrounded)
         {
             animator.SetBool("IsJumping", false);
-            Debug.Log("Not Jumping");
+           // Debug.Log("Not Jumping");
         }
 
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
     }
+    public void PlayerTakeDamage(float damage)
+    {
+        health -= damage = currentHealth;
+        Debug.Log("player took damage");
+        healthDisplay.text = currentHealth.ToString();
+        if (health <= 0f)
+        {
+            GameOver();
+        }
+    }
+
+    void GameOver()
+    {
+        Debug.Log("Game Over");
+        SceneManager.LoadScene("GameOver");    }
 }
