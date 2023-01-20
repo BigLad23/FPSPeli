@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public static Timer instance;
 
     public Text timeCounter;
+    public Text yourTime;
 
     private TimeSpan timePlaying;
     private bool timerGoing;
@@ -39,6 +40,9 @@ public class Timer : MonoBehaviour
     public void EndTimer()
     {
         timerGoing = false;
+        PlayerPrefs.SetFloat("Time", elapsedTime);
+        PlayerPrefs.GetFloat("Time", elapsedTime);
+        yourTime.text = "Your time: " + elapsedTime.ToString("mm':'ss'.'ff");
     }
 
     private IEnumerator UpdateTimer()
