@@ -2493,7 +2493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Best Time: 00:15:34'
 --- !u!222 &369416314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11295,8 +11295,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636227399}
-  m_LocalRotation: {x: 0.47663087, y: -0.5173711, z: -0.44479173, w: -0.55435604}
-  m_LocalPosition: {x: 51.994293, y: -53.24555, z: -8.347423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.237179, y: -13.205999, z: -3.9767065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
