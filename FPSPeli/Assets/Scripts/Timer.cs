@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,7 +50,6 @@ public class Timer : MonoBehaviour
                 recordTime.text = bestTimeStr;
                 PlayerPrefs.SetFloat(nameof(bestTime), elapsedTime);
                 PlayerPrefs.Save();
-                
             }
     }
 
@@ -62,6 +60,7 @@ public class Timer : MonoBehaviour
         Destroy(timeCounter);
         Destroy(pauseMenuUI);
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private IEnumerator UpdateTimer()
