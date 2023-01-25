@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +11,16 @@ public class Timer : MonoBehaviour
     public static Timer instance;
 
     public Text timeCounter;
-    public Text yourTime;
 
     private TimeSpan timePlaying;
     private bool timerGoing;
 
     private float elapsedTime;
-
+    public GameObject gameComplete;
+    public Text yourTime;
+    public GameObject pauseMenuUI;
+    private float bestTime;
+    public Text recordTime;
     private void Awake()
     {
         instance = this;
@@ -26,6 +30,7 @@ public class Timer : MonoBehaviour
     {
         timeCounter.text = "Time: 00:00.00";
         timerGoing = false;
+        bestTime = PlayerPrefs.GetFloat(nameof(bestTime));
         BeginTimer();
     }
 
@@ -37,12 +42,26 @@ public class Timer : MonoBehaviour
         StartCoroutine(UpdateTimer());
     }
 
+    private void Update()
+    {
+         if (bestTime > elapsedTime)
+            {
+                bestTime = elapsedTime;
+                string bestTimeStr = "Best time: " + bestTime.ToString("mm':'ss'.'ff");
+                recordTime.text = bestTimeStr;
+                PlayerPrefs.SetFloat(nameof(bestTime), elapsedTime);
+                PlayerPrefs.Save();
+                
+            }
+    }
+
     public void EndTimer()
     {
         timerGoing = false;
-        PlayerPrefs.SetFloat("Time", elapsedTime);
-        PlayerPrefs.GetFloat("Time", elapsedTime);
-        yourTime.text = "Your time: " + elapsedTime.ToString("mm':'ss'.'ff");
+        gameComplete.SetActive(true);
+        Destroy(timeCounter);
+        Destroy(pauseMenuUI);
+        Time.timeScale = 0f;
     }
 
     private IEnumerator UpdateTimer()
@@ -53,7 +72,7 @@ public class Timer : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
-
+            yourTime.text = timePlayingStr;
             yield return null;
         }
     }
